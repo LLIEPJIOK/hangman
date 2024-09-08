@@ -10,6 +10,7 @@ type CategoriesMap struct {
 
 func NewCategoriesMap(categories map[string]map[string][]Word) CategoriesMap {
 	mp := make(map[string]DifficultiesMap)
+
 	for k, v := range categories {
 		newVal := NewDifficultiesMap(v)
 		if newVal.Len() != 0 {

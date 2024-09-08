@@ -8,6 +8,7 @@ type DifficultiesMap struct {
 
 func NewDifficultiesMap(difficulties map[string][]Word) DifficultiesMap {
 	mp := make(map[string][]Word)
+
 	for k, words := range difficulties {
 		newKey := strings.ToLower(k)
 		for _, word := range words {

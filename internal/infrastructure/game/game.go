@@ -9,20 +9,20 @@ import (
 	"github.com/es-debug/backend-academy-2024-go-template/internal/domain"
 )
 
-type GameEngine interface {
+type Engine interface {
 	GetRandomWord(category, difficulty string) (domain.Word, error)
 	CheckLetter(state *domain.GameState, letter rune)
 }
 
 type Game struct {
-	engine       GameEngine
+	engine       Engine
 	state        domain.GameState
 	category     string
 	difficulty   string
 	gallowsLines []string
 }
 
-func New(eng GameEngine, category, difficulty string) (*Game, error) {
+func New(eng Engine, category, difficulty string) (*Game, error) {
 	guessedWord, err := eng.GetRandomWord(category, difficulty)
 	if err != nil {
 		return nil, fmt.Errorf("eng.GetRandomWord(%q, %q): %w", category, difficulty, err)
@@ -45,10 +45,12 @@ func (g *Game) Start() {
 		if !scan.Scan() {
 			break
 		}
+
 		input := []rune(scan.Text())
 		if len(input) == 1 {
 			g.engine.CheckLetter(&g.state, input[0])
 		}
+
 		g.draw()
 	}
 }

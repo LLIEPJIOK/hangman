@@ -11,9 +11,7 @@ import (
 )
 
 func Run() error {
-	var wordsPath string
-	var category string
-	var difficulty string
+	var wordsPath, category, difficulty string
 
 	pflag.StringVarP(&wordsPath, "path", "p", "resources/words.json", "path to file with words")
 	pflag.StringVarP(&category, "category", "c", "animals", "words category")
@@ -34,11 +32,12 @@ func Run() error {
 		return fmt.Errorf("cannot create engine: %w", err)
 	}
 
-	game, err := game.New(eng, category, difficulty)
+	newGame, err := game.New(eng, category, difficulty)
 	if err != nil {
-		return fmt.Errorf("cannot create game: %w", err)
+		return fmt.Errorf("cannot create new game: %w", err)
 	}
 
-	game.Start()
+	newGame.Start()
+
 	return nil
 }

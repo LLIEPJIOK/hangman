@@ -2,6 +2,7 @@ package game
 
 import (
 	"fmt"
+	"log/slog"
 	"os"
 	"os/exec"
 	"runtime"
@@ -20,27 +21,35 @@ const (
 
 func clearConsole() {
 	var cmd *exec.Cmd
+
 	switch runtime.GOOS {
 	case "windows":
 		cmd = exec.Command("cmd", "/c", "cls")
 	default:
 		cmd = exec.Command("clear")
 	}
+
 	cmd.Stdout = os.Stdout
-	cmd.Run()
+
+	err := cmd.Run()
+	if err != nil {
+		slog.Error(fmt.Sprintf("cannot clear console: %s", err))
+	}
 }
 
 func (g *Game) draw() {
 	clearConsole()
 
 	curDrawings := (g.state.GuessedWord.Attempts - g.state.AttemptsLeft) * maxDrawings / g.state.GuessedWord.Attempts
+
 	for i, line := range g.gallowsLines {
-		if i+1 == len(g.gallowsLines) || curDrawings-len(g.gallowsLines)-i+1 >= 0 {
+		switch {
+		case i+1 == len(g.gallowsLines) || curDrawings-len(g.gallowsLines)-i+1 >= 0:
 			fmt.Println(line)
-		} else if curDrawings-len(g.gallowsLines)+i+1 >= 0 {
+		case curDrawings-len(g.gallowsLines)+i+1 >= 0:
 			runes := []rune(line)
 			fmt.Println(string(runes[:len(runes)/2]))
-		} else {
+		default:
 			fmt.Println()
 		}
 	}
@@ -52,6 +61,7 @@ func (g *Game) draw() {
 	if g.state.IsWin {
 		fmt.Println("Congratulation! You guessed the word")
 	}
+
 	if g.state.AttemptsLeft == 0 {
 		fmt.Println("You lose. Hidden word:", g.state.GuessedWord.Value)
 	}
