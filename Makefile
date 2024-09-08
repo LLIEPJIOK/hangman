@@ -1,11 +1,11 @@
 COVERAGE_FILE ?= coverage.out
 
-TARGET ?= run # CHANGE THIS TO YOUR BINARY NAME/NAMES
+TARGET ?= hangman # CHANGE THIS TO YOUR BINARY NAME/NAMES
 
 .PHONY: build
 build:
 	@echo "Выполняется go build для таргета ${TARGET}"
-	@mkdir -p .bin
+	@mkdir -p bin
 	@go build -o ./bin/${TARGET} ./cmd/${TARGET}
 
 ## test: run all tests

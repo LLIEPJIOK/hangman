@@ -1,0 +1,154 @@
+{
+	"Animals": {
+		"easy": [
+			{ "word": "Dog", "attempts": 6 },
+			{ "word": "Cat", "attempts": 6 },
+			{ "word": "Lion", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Bear", "attempts": 5 },
+			{ "word": "Tiger", "attempts": 5 },
+			{ "word": "Penguin", "attempts": 5 }
+		],
+		"hard": [
+			{ "word": "Dolphin", "attempts": 4 },
+			{ "word": "Giraffe", "attempts": 4 },
+			{ "word": "Kangaroo", "attempts": 4 }
+		]
+	},
+	"Fruits": {
+		"easy": [
+			{ "word": "Apple", "attempts": 6 },
+			{ "word": "Banana", "attempts": 6 },
+			{ "word": "Mango", "attempts": 6 },
+			{ "word": "Peach", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Orange", "attempts": 5 },
+			{ "word": "Grapes", "attempts": 5 },
+			{ "word": "Blueberry", "attempts": 6 }
+		],
+		"hard": [
+			{ "word": "Pineapple", "attempts": 4 },
+			{ "word": "Strawberry", "attempts": 5 },
+			{ "word": "Watermelon", "attempts": 4 }
+		]
+	},
+	"Colors": {
+		"easy": [
+			{ "word": "Red", "attempts": 5 },
+			{ "word": "Blue", "attempts": 6 },
+			{ "word": "Green", "attempts": 6 },
+			{ "word": "Black", "attempts": 6 },
+			{ "word": "White", "attempts": 6 },
+			{ "word": "Pink", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Yellow", "attempts": 5 },
+			{ "word": "Orange", "attempts": 5 },
+			{ "word": "Brown", "attempts": 5 }
+		],
+		"hard": [{ "word": "Purple", "attempts": 3 }]
+	},
+	"Emotions": {
+		"easy": [
+			{ "word": "Happy", "attempts": 6 },
+			{ "word": "Sad", "attempts": 4 },
+			{ "word": "Angry", "attempts": 6 },
+			{ "word": "Calm", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Excited", "attempts": 5 },
+			{ "word": "Nervous", "attempts": 5 },
+			{ "word": "Confused", "attempts": 5 },
+			{ "word": "Joyful", "attempts": 5 },
+			{ "word": "Anxious", "attempts": 5 }
+		],
+		"hard": [{ "word": "Frustrated", "attempts": 4 }]
+	},
+	"Places": {
+		"easy": [
+			{ "word": "City", "attempts": 5 },
+			{ "word": "Beach", "attempts": 6 },
+			{ "word": "Park", "attempts": 5 },
+			{ "word": "Hotel", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Forest", "attempts": 5 },
+			{ "word": "Museum", "attempts": 5 },
+			{ "word": "Library", "attempts": 5 },
+			{ "word": "Airport", "attempts": 5 }
+		],
+		"hard": [
+			{ "word": "Mountain", "attempts": 4 },
+			{ "word": "Restaurant", "attempts": 4 }
+		]
+	},
+	"Foods": {
+		"easy": [
+			{ "word": "Pizza", "attempts": 6 },
+			{ "word": "Burger", "attempts": 6 },
+			{ "word": "Pasta", "attempts": 6 },
+			{ "word": "Salad", "attempts": 6 },
+			{ "word": "Soup", "attempts": 5 }
+		],
+		"medium": [
+			{ "word": "Sushi", "attempts": 5 },
+			{ "word": "Steak", "attempts": 5 },
+			{ "word": "Tacos", "attempts": 5 }
+		],
+		"hard": [{ "word": "Sandwich", "attempts": 3 }]
+	},
+	"Jobs": {
+		"easy": [
+			{ "word": "Chef", "attempts": 6 },
+			{ "word": "Nurse", "attempts": 6 },
+			{ "word": "Artist", "attempts": 6 },
+			{ "word": "Pilot", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Teacher", "attempts": 5 },
+			{ "word": "Doctor", "attempts": 5 },
+			{ "word": "Engineer", "attempts": 5 },
+			{ "word": "Writer", "attempts": 5 },
+			{ "word": "Lawyer", "attempts": 5 }
+		],
+		"hard": [{ "word": "Scientist", "attempts": 4 }]
+	},
+	"Vehicles": {
+		"easy": [
+			{ "word": "Car", "attempts": 5 },
+			{ "word": "Boat", "attempts": 6 },
+			{ "word": "Bus", "attempts": 5 },
+			{ "word": "Truck", "attempts": 6 },
+			{ "word": "Scooter", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Bicycle", "attempts": 5 },
+			{ "word": "Train", "attempts": 4 },
+			{ "word": "Motorcycle", "attempts": 5 }
+		],
+		"hard": [
+			{ "word": "Airplane", "attempts": 4 },
+			{ "word": "Helicopter", "attempts": 4 }
+		]
+	},
+	"Technology": {
+		"easy": [
+			{ "word": "Computer", "attempts": 6 },
+			{ "word": "Tablet", "attempts": 6 },
+			{ "word": "Printer", "attempts": 6 },
+			{ "word": "Mouse", "attempts": 6 },
+			{ "word": "Keyboard", "attempts": 6 }
+		],
+		"medium": [
+			{ "word": "Router", "attempts": 5 },
+			{ "word": "Camera", "attempts": 4 }
+		],
+		"hard": [
+			{ "word": "Television", "attempts": 4 },
+			{ "word": "Smartphone", "attempts": 4 },
+			{ "word": "Headphones", "attempts": 4 }
+		]
+	}
+}
