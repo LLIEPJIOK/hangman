@@ -32,7 +32,7 @@ func Run() error {
 		return fmt.Errorf("cannot create engine: %w", err)
 	}
 
-	newGame, err := game.New(eng, category, difficulty)
+	newGame, err := game.New(eng, category, difficulty, os.Stdin, os.Stdout)
 	if err != nil {
 		return fmt.Errorf("cannot create new game: %w", err)
 	}

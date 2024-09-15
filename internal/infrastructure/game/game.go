@@ -3,7 +3,7 @@ package game
 import (
 	"bufio"
 	"fmt"
-	"os"
+	"io"
 	"strings"
 
 	"github.com/es-debug/backend-academy-2024-go-template/internal/domain"
@@ -20,9 +20,11 @@ type Game struct {
 	category     string
 	difficulty   string
 	gallowsLines []string
+	in           io.Reader
+	out          io.Writer
 }
 
-func New(eng Engine, category, difficulty string) (*Game, error) {
+func New(eng Engine, category, difficulty string, in io.Reader, out io.Writer) (*Game, error) {
 	guessedWord, err := eng.GetRandomWord(category, difficulty)
 	if err != nil {
 		return nil, fmt.Errorf("eng.GetRandomWord(%q, %q): %w", category, difficulty, err)
@@ -34,13 +36,15 @@ func New(eng Engine, category, difficulty string) (*Game, error) {
 		category:     category,
 		difficulty:   difficulty,
 		gallowsLines: strings.Split(gallows, "\n"),
+		in:           in,
+		out:          out,
 	}, nil
 }
 
 func (g *Game) Start() {
 	g.draw()
 
-	scan := bufio.NewScanner(os.Stdin)
+	scan := bufio.NewScanner(g.in)
 	for g.state.AttemptsLeft != 0 && !g.state.IsWin {
 		if !scan.Scan() {
 			break
