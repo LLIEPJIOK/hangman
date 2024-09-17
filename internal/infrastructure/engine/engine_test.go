@@ -47,10 +47,10 @@ func TestNewEngineError(t *testing.T) {
 
 		buffer := bytes.NewBuffer([]byte(noWords))
 		_, err := engine.New(buffer)
-		require.ErrorIs(
+		require.ErrorAs(
 			t,
 			err,
-			engine.ErrEmptyWordMap{},
+			&engine.ErrEmptyWordMap{},
 			"engine.New should return error for empty map",
 		)
 	})
