@@ -185,6 +185,133 @@ func TestGetRandomWordWithError(t *testing.T) {
 	}
 }
 
+func TestLetterToEnglishInLowerCase(t *testing.T) {
+	t.Parallel()
+
+	buffer := bytes.NewBuffer([]byte(words))
+	eng, err := engine.New(buffer)
+	require.NoError(t, err, "engine must be created")
+
+	testCases := []struct {
+		initialLetter  rune
+		expectedLetter rune
+	}{
+		{
+			initialLetter:  'А',
+			expectedLetter: 'a',
+		},
+		{
+			initialLetter:  'В',
+			expectedLetter: 'b',
+		},
+		{
+			initialLetter:  'Е',
+			expectedLetter: 'e',
+		},
+		{
+			initialLetter:  'М',
+			expectedLetter: 'm',
+		},
+		{
+			initialLetter:  'Н',
+			expectedLetter: 'h',
+		},
+		{
+			initialLetter:  'О',
+			expectedLetter: 'o',
+		},
+		{
+			initialLetter:  'Р',
+			expectedLetter: 'p',
+		},
+		{
+			initialLetter:  'С',
+			expectedLetter: 'c',
+		},
+		{
+			initialLetter:  'Т',
+			expectedLetter: 't',
+		},
+		{
+			initialLetter:  'У',
+			expectedLetter: 'y',
+		},
+		{
+			initialLetter:  'Х',
+			expectedLetter: 'x',
+		},
+		{
+			initialLetter:  'а',
+			expectedLetter: 'a',
+		},
+		{
+			initialLetter:  'е',
+			expectedLetter: 'e',
+		},
+		{
+			initialLetter:  'о',
+			expectedLetter: 'o',
+		},
+		{
+			initialLetter:  'р',
+			expectedLetter: 'p',
+		},
+		{
+			initialLetter:  'с',
+			expectedLetter: 'c',
+		},
+		{
+			initialLetter:  'у',
+			expectedLetter: 'y',
+		},
+		{
+			initialLetter:  'х',
+			expectedLetter: 'x',
+		},
+	}
+
+	for i, testCase := range testCases {
+		t.Run(fmt.Sprintf("#%d", i), func(t *testing.T) {
+			t.Parallel()
+
+			letter, ok := eng.ToEnglishInLowerCase(testCase.initialLetter)
+			require.True(t, ok, "should be a letter")
+			require.Equal(t, testCase.expectedLetter, letter, "letters should be equal")
+		})
+	}
+}
+
+func TestNotLetterToEnglishInLowerCase(t *testing.T) {
+	t.Parallel()
+
+	buffer := bytes.NewBuffer([]byte(words))
+	eng, err := engine.New(buffer)
+	require.NoError(t, err, "engine must be created")
+
+	testCases := []struct {
+		initialLetter rune
+	}{
+		{
+			initialLetter: 'ъ',
+		},
+		{
+			initialLetter: '$',
+		},
+		{
+			initialLetter: '1',
+		},
+	}
+
+	for i, testCase := range testCases {
+		t.Run(fmt.Sprintf("#%d", i), func(t *testing.T) {
+			t.Parallel()
+
+			_, ok := eng.ToEnglishInLowerCase(testCase.initialLetter)
+			require.False(t, ok, "shouldn't be a letter")
+		})
+	}
+}
+
 func gameStatesEquals(first, second domain.GameState) bool {
 	if first.GuessedWord != second.GuessedWord || len(first.WordState) != len(second.WordState) ||
 		first.AttemptsLeft != second.AttemptsLeft ||
@@ -225,7 +352,7 @@ func TestCheckLetter(t *testing.T) {
 		},
 		{
 			initial: domain.NewGameState(domain.Word{Value: "word", Attempts: 4}),
-			letter:  'c',
+			letter:  'С',
 			expected: domain.GameState{
 				GuessedWord:  domain.Word{Value: "word", Attempts: 4},
 				WordState:    []rune("----"),
@@ -235,7 +362,7 @@ func TestCheckLetter(t *testing.T) {
 		},
 		{
 			initial: domain.NewGameState(domain.Word{Value: "aaaaa", Attempts: 4}),
-			letter:  'a',
+			letter:  'А',
 			expected: domain.GameState{
 				GuessedWord:  domain.Word{Value: "aaaaa", Attempts: 4},
 				WordState:    []rune("aaaaa"),
@@ -250,7 +377,7 @@ func TestCheckLetter(t *testing.T) {
 				AttemptsLeft: 1,
 				IsWin:        false,
 			},
-			letter: 'o',
+			letter: 'о',
 			expected: domain.GameState{
 				GuessedWord:  domain.Word{Value: "word", Attempts: 5},
 				WordState:    []rune("word"),
@@ -280,7 +407,7 @@ func TestCheckLetter(t *testing.T) {
 				AttemptsLeft: 1,
 				IsWin:        false,
 			},
-			letter: 'y',
+			letter: 'У',
 			expected: domain.GameState{
 				GuessedWord:  domain.Word{Value: "good", Attempts: 10},
 				WordState:    []rune("g--d"),

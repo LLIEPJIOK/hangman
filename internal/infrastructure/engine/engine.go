@@ -12,7 +12,8 @@ import (
 )
 
 type Engine struct {
-	categories domain.CategoriesMap
+	categories       domain.CategoriesMap
+	russianToEnglish map[rune]rune
 }
 
 func New(wordsReader io.Reader) (*Engine, error) {
@@ -33,6 +34,26 @@ func New(wordsReader io.Reader) (*Engine, error) {
 
 	return &Engine{
 		categories: categoriesMap,
+		russianToEnglish: map[rune]rune{
+			'А': 'A',
+			'В': 'B',
+			'Е': 'E',
+			'М': 'M',
+			'Н': 'H',
+			'О': 'O',
+			'Р': 'P',
+			'С': 'C',
+			'Т': 'T',
+			'У': 'Y',
+			'Х': 'X',
+			'а': 'a',
+			'е': 'e',
+			'о': 'o',
+			'р': 'p',
+			'с': 'c',
+			'у': 'y',
+			'х': 'x',
+		},
 	}, nil
 }
 
@@ -62,8 +83,28 @@ func (e *Engine) GetRandomWord(category, difficulty string) (domain.Word, error)
 	return words[randID.Int64()], nil
 }
 
-func (e *Engine) CheckLetter(state *domain.GameState, letter rune) {
+func (e *Engine) ToEnglishInLowerCase(letter rune) (rune, bool) {
+	if v, ok := e.russianToEnglish[letter]; ok {
+		letter = v
+	}
+
 	letter = unicode.ToLower(letter)
+	if letter < 'a' || letter > 'z' {
+		return 0, false
+	}
+
+	return letter, true
+}
+
+func (e *Engine) CheckLetter(state *domain.GameState, letter rune) {
+	var ok bool
+	letter, ok = e.ToEnglishInLowerCase(letter)
+
+	// if rune isn't a letter
+	if !ok {
+		return
+	}
+
 	runeID, contains, IsWin := 0, false, true
 
 	for _, r := range state.GuessedWord.Value {
