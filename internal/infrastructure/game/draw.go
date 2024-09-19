@@ -35,6 +35,11 @@ func (g *Game) draw() {
 
 	fmt.Fprintf(g.out, "Category: %s, difficulty: %s\n", g.category, g.difficulty)
 	fmt.Fprintln(g.out, "Word:", string(g.state.WordState))
+
+	if g.showHint {
+		fmt.Fprintln(g.out, "Hint:", g.state.GuessedWord.Hint)
+	}
+
 	fmt.Fprintln(g.out, "Attempts left:", g.state.AttemptsLeft)
 
 	if g.state.IsWin {

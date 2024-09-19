@@ -1,154 +1,376 @@
 {
 	"Animals": {
 		"easy": [
-			{ "word": "Dog", "attempts": 6 },
-			{ "word": "Cat", "attempts": 6 },
-			{ "word": "Lion", "attempts": 6 }
+			{ "word": "Dog", "attempts": 6, "hint": "A loyal pet that barks" },
+			{ "word": "Cat", "attempts": 6, "hint": "A small pet that purrs" },
+			{ "word": "Lion", "attempts": 6, "hint": "King of the jungle" }
 		],
 		"medium": [
-			{ "word": "Bear", "attempts": 5 },
-			{ "word": "Tiger", "attempts": 5 },
-			{ "word": "Penguin", "attempts": 5 }
+			{ "word": "Bear", "attempts": 5, "hint": "Large animal that hibernates" },
+			{ "word": "Tiger", "attempts": 5, "hint": "Striped big cat" },
+			{
+				"word": "Penguin",
+				"attempts": 5,
+				"hint": "Flightless bird living in Antarctica"
+			}
 		],
 		"hard": [
-			{ "word": "Dolphin", "attempts": 4 },
-			{ "word": "Giraffe", "attempts": 4 },
-			{ "word": "Kangaroo", "attempts": 4 }
+			{ "word": "Dolphin", "attempts": 4, "hint": "Intelligent marine mammal" },
+			{ "word": "Giraffe", "attempts": 4, "hint": "Animal with a long neck" },
+			{ "word": "Kangaroo", "attempts": 4, "hint": "Marsupial that hops" }
 		]
 	},
 	"Fruits": {
 		"easy": [
-			{ "word": "Apple", "attempts": 6 },
-			{ "word": "Banana", "attempts": 6 },
-			{ "word": "Mango", "attempts": 6 },
-			{ "word": "Peach", "attempts": 6 }
+			{
+				"word": "Apple",
+				"attempts": 6,
+				"hint": "A popular fruit that keeps the doctor away"
+			},
+			{
+				"word": "Banana",
+				"attempts": 6,
+				"hint": "Yellow fruit loved by monkeys"
+			},
+			{ "word": "Mango", "attempts": 6, "hint": "Sweet tropical fruit" },
+			{ "word": "Peach", "attempts": 6, "hint": "Soft fruit with a fuzzy skin" }
 		],
 		"medium": [
-			{ "word": "Orange", "attempts": 5 },
-			{ "word": "Grapes", "attempts": 5 },
-			{ "word": "Blueberry", "attempts": 6 }
+			{
+				"word": "Orange",
+				"attempts": 5,
+				"hint": "Citrus fruit with vitamin C"
+			},
+			{
+				"word": "Grapes",
+				"attempts": 5,
+				"hint": "Small fruit used to make wine"
+			},
+			{
+				"word": "Blueberry",
+				"attempts": 6,
+				"hint": "Small blue fruit often used in pies"
+			}
 		],
 		"hard": [
-			{ "word": "Pineapple", "attempts": 4 },
-			{ "word": "Strawberry", "attempts": 5 },
-			{ "word": "Watermelon", "attempts": 4 }
+			{ "word": "Pineapple", "attempts": 4, "hint": "Spiky tropical fruit" },
+			{
+				"word": "Strawberry",
+				"attempts": 5,
+				"hint": "Red fruit with seeds on the outside"
+			},
+			{
+				"word": "Watermelon",
+				"attempts": 4,
+				"hint": "Large fruit with a green rind and red inside"
+			}
 		]
 	},
 	"Colors": {
 		"easy": [
-			{ "word": "Red", "attempts": 5 },
-			{ "word": "Blue", "attempts": 6 },
-			{ "word": "Green", "attempts": 6 },
-			{ "word": "Black", "attempts": 6 },
-			{ "word": "White", "attempts": 6 },
-			{ "word": "Pink", "attempts": 6 }
+			{ "word": "Red", "attempts": 5, "hint": "Color of an apple" },
+			{ "word": "Blue", "attempts": 6, "hint": "Color of the sky" },
+			{ "word": "Green", "attempts": 6, "hint": "Color of grass" },
+			{ "word": "Black", "attempts": 6, "hint": "Opposite of white" },
+			{ "word": "White", "attempts": 6, "hint": "Color of snow" },
+			{ "word": "Pink", "attempts": 6, "hint": "Mix of red and white" }
 		],
 		"medium": [
-			{ "word": "Yellow", "attempts": 5 },
-			{ "word": "Orange", "attempts": 5 },
-			{ "word": "Brown", "attempts": 5 }
+			{ "word": "Yellow", "attempts": 5, "hint": "Color of the sun" },
+			{ "word": "Orange", "attempts": 5, "hint": "Color and a fruit name" },
+			{ "word": "Brown", "attempts": 5, "hint": "Color of chocolate" }
 		],
-		"hard": [{ "word": "Purple", "attempts": 3 }]
+		"hard": [{ "word": "Purple", "attempts": 3, "hint": "Mix of blue and red" }]
 	},
 	"Emotions": {
 		"easy": [
-			{ "word": "Happy", "attempts": 6 },
-			{ "word": "Sad", "attempts": 4 },
-			{ "word": "Angry", "attempts": 6 },
-			{ "word": "Calm", "attempts": 6 }
+			{ "word": "Happy", "attempts": 6, "hint": "Feeling of joy" },
+			{ "word": "Sad", "attempts": 4, "hint": "Feeling of sorrow" },
+			{ "word": "Angry", "attempts": 6, "hint": "Feeling of annoyance" },
+			{ "word": "Calm", "attempts": 6, "hint": "Feeling relaxed and peaceful" }
 		],
 		"medium": [
-			{ "word": "Excited", "attempts": 5 },
-			{ "word": "Nervous", "attempts": 5 },
-			{ "word": "Confused", "attempts": 5 },
-			{ "word": "Joyful", "attempts": 5 },
-			{ "word": "Anxious", "attempts": 5 }
+			{
+				"word": "Excited",
+				"attempts": 5,
+				"hint": "Feeling eager and enthusiastic"
+			},
+			{
+				"word": "Nervous",
+				"attempts": 5,
+				"hint": "Feeling anxious and uneasy"
+			},
+			{
+				"word": "Confused",
+				"attempts": 5,
+				"hint": "Feeling bewildered and uncertain"
+			},
+			{ "word": "Joyful", "attempts": 5, "hint": "Feeling full of happiness" },
+			{ "word": "Anxious", "attempts": 5, "hint": "Feeling worried and uneasy" }
 		],
-		"hard": [{ "word": "Frustrated", "attempts": 4 }]
+		"hard": [
+			{
+				"word": "Frustrated",
+				"attempts": 4,
+				"hint": "Feeling upset due to inability to change something"
+			}
+		]
 	},
 	"Places": {
 		"easy": [
-			{ "word": "City", "attempts": 5 },
-			{ "word": "Beach", "attempts": 6 },
-			{ "word": "Park", "attempts": 5 },
-			{ "word": "Hotel", "attempts": 6 }
+			{ "word": "City", "attempts": 5, "hint": "A large town" },
+			{ "word": "Beach", "attempts": 6, "hint": "Sandy area near the ocean" },
+			{
+				"word": "Park",
+				"attempts": 5,
+				"hint": "Public place with trees and grass"
+			},
+			{
+				"word": "Hotel",
+				"attempts": 6,
+				"hint": "Place where you stay during a trip"
+			}
 		],
 		"medium": [
-			{ "word": "Forest", "attempts": 5 },
-			{ "word": "Museum", "attempts": 5 },
-			{ "word": "Library", "attempts": 5 },
-			{ "word": "Airport", "attempts": 5 }
+			{
+				"word": "Forest",
+				"attempts": 5,
+				"hint": "Large area covered with trees"
+			},
+			{
+				"word": "Museum",
+				"attempts": 5,
+				"hint": "Place to see historical artifacts"
+			},
+			{ "word": "Library", "attempts": 5, "hint": "Place to borrow books" },
+			{
+				"word": "Airport",
+				"attempts": 5,
+				"hint": "Where airplanes take off and land"
+			}
 		],
 		"hard": [
-			{ "word": "Mountain", "attempts": 4 },
-			{ "word": "Restaurant", "attempts": 4 }
+			{
+				"word": "Mountain",
+				"attempts": 4,
+				"hint": "A high landform that rises above the surrounding area"
+			},
+			{ "word": "Restaurant", "attempts": 4, "hint": "Place where you eat out" }
 		]
 	},
 	"Foods": {
 		"easy": [
-			{ "word": "Pizza", "attempts": 6 },
-			{ "word": "Burger", "attempts": 6 },
-			{ "word": "Pasta", "attempts": 6 },
-			{ "word": "Salad", "attempts": 6 },
-			{ "word": "Soup", "attempts": 5 }
+			{
+				"word": "Pizza",
+				"attempts": 6,
+				"hint": "Popular Italian dish with cheese and toppings"
+			},
+			{
+				"word": "Burger",
+				"attempts": 6,
+				"hint": "Sandwich with a patty inside"
+			},
+			{
+				"word": "Pasta",
+				"attempts": 6,
+				"hint": "Italian dish made from noodles"
+			},
+			{
+				"word": "Salad",
+				"attempts": 6,
+				"hint": "Dish made from fresh vegetables"
+			},
+			{ "word": "Soup", "attempts": 5, "hint": "Hot liquid food" }
 		],
 		"medium": [
-			{ "word": "Sushi", "attempts": 5 },
-			{ "word": "Steak", "attempts": 5 },
-			{ "word": "Tacos", "attempts": 5 }
+			{
+				"word": "Sushi",
+				"attempts": 5,
+				"hint": "Japanese dish with rice and raw fish"
+			},
+			{ "word": "Steak", "attempts": 5, "hint": "Grilled piece of meat" },
+			{
+				"word": "Tacos",
+				"attempts": 5,
+				"hint": "Mexican dish with tortilla and filling"
+			}
 		],
-		"hard": [{ "word": "Sandwich", "attempts": 3 }]
+		"hard": [
+			{
+				"word": "Sandwich",
+				"attempts": 3,
+				"hint": "Two slices of bread with fillings in between"
+			}
+		]
 	},
 	"Jobs": {
 		"easy": [
-			{ "word": "Chef", "attempts": 6 },
-			{ "word": "Nurse", "attempts": 6 },
-			{ "word": "Artist", "attempts": 6 },
-			{ "word": "Pilot", "attempts": 6 }
+			{
+				"word": "Chef",
+				"attempts": 6,
+				"hint": "Person who cooks in a restaurant"
+			},
+			{
+				"word": "Nurse",
+				"attempts": 6,
+				"hint": "Person who helps doctors and patients"
+			},
+			{
+				"word": "Artist",
+				"attempts": 6,
+				"hint": "Person who paints or creates art"
+			},
+			{ "word": "Pilot", "attempts": 6, "hint": "Person who flies airplanes" }
 		],
 		"medium": [
-			{ "word": "Teacher", "attempts": 5 },
-			{ "word": "Doctor", "attempts": 5 },
-			{ "word": "Engineer", "attempts": 5 },
-			{ "word": "Writer", "attempts": 5 },
-			{ "word": "Lawyer", "attempts": 5 }
+			{
+				"word": "Teacher",
+				"attempts": 5,
+				"hint": "Person who educates students in a school"
+			},
+			{
+				"word": "Doctor",
+				"attempts": 5,
+				"hint": "Person who treats sick people"
+			},
+			{
+				"word": "Engineer",
+				"attempts": 5,
+				"hint": "Person who designs and builds machines or structures"
+			},
+			{
+				"word": "Writer",
+				"attempts": 5,
+				"hint": "Person who creates stories or books"
+			},
+			{
+				"word": "Lawyer",
+				"attempts": 5,
+				"hint": "Person who practices law and defends people in court"
+			}
 		],
-		"hard": [{ "word": "Scientist", "attempts": 4 }]
+		"hard": [
+			{
+				"word": "Scientist",
+				"attempts": 4,
+				"hint": "Person who researches and conducts experiments"
+			}
+		]
 	},
 	"Vehicles": {
 		"easy": [
-			{ "word": "Car", "attempts": 5 },
-			{ "word": "Boat", "attempts": 6 },
-			{ "word": "Bus", "attempts": 5 },
-			{ "word": "Truck", "attempts": 6 },
-			{ "word": "Scooter", "attempts": 6 }
+			{
+				"word": "Car",
+				"attempts": 5,
+				"hint": "Common vehicle with four wheels"
+			},
+			{
+				"word": "Boat",
+				"attempts": 6,
+				"hint": "Vehicle that travels on water"
+			},
+			{
+				"word": "Bus",
+				"attempts": 5,
+				"hint": "Large vehicle that carries many passengers"
+			},
+			{
+				"word": "Truck",
+				"attempts": 6,
+				"hint": "Vehicle used to transport goods"
+			},
+			{
+				"word": "Scooter",
+				"attempts": 6,
+				"hint": "Small two-wheeled vehicle powered by a motor"
+			}
 		],
 		"medium": [
-			{ "word": "Bicycle", "attempts": 5 },
-			{ "word": "Train", "attempts": 4 },
-			{ "word": "Motorcycle", "attempts": 5 }
+			{
+				"word": "Bicycle",
+				"attempts": 5,
+				"hint": "Two-wheeled vehicle powered by pedaling"
+			},
+			{
+				"word": "Train",
+				"attempts": 4,
+				"hint": "Vehicle that runs on tracks and carries passengers or cargo"
+			},
+			{
+				"word": "Motorcycle",
+				"attempts": 5,
+				"hint": "Two-wheeled motorized vehicle"
+			}
 		],
 		"hard": [
-			{ "word": "Airplane", "attempts": 4 },
-			{ "word": "Helicopter", "attempts": 4 }
+			{
+				"word": "Airplane",
+				"attempts": 4,
+				"hint": "Vehicle that flies in the sky"
+			},
+			{
+				"word": "Helicopter",
+				"attempts": 4,
+				"hint": "Aircraft with rotating blades"
+			}
 		]
 	},
 	"Technology": {
 		"easy": [
-			{ "word": "Computer", "attempts": 6 },
-			{ "word": "Tablet", "attempts": 6 },
-			{ "word": "Printer", "attempts": 6 },
-			{ "word": "Mouse", "attempts": 6 },
-			{ "word": "Keyboard", "attempts": 6 }
+			{
+				"word": "Computer",
+				"attempts": 6,
+				"hint": "Electronic device for processing data"
+			},
+			{
+				"word": "Tablet",
+				"attempts": 6,
+				"hint": "Portable touch-screen device"
+			},
+			{
+				"word": "Printer",
+				"attempts": 6,
+				"hint": "Device that produces paper copies of documents"
+			},
+			{
+				"word": "Mouse",
+				"attempts": 6,
+				"hint": "Device used to control the cursor on a computer"
+			},
+			{
+				"word": "Keyboard",
+				"attempts": 6,
+				"hint": "Device used for typing on a computer"
+			}
 		],
 		"medium": [
-			{ "word": "Router", "attempts": 5 },
-			{ "word": "Camera", "attempts": 4 }
+			{
+				"word": "Router",
+				"attempts": 5,
+				"hint": "Device that provides internet access"
+			},
+			{
+				"word": "Camera",
+				"attempts": 4,
+				"hint": "Device used to take photos or videos"
+			}
 		],
 		"hard": [
-			{ "word": "Television", "attempts": 4 },
-			{ "word": "Smartphone", "attempts": 4 },
-			{ "word": "Headphones", "attempts": 4 }
+			{
+				"word": "Television",
+				"attempts": 4,
+				"hint": "Device used to watch shows and movies"
+			},
+			{
+				"word": "Smartphone",
+				"attempts": 4,
+				"hint": "Mobile device that combines a phone and a computer"
+			},
+			{
+				"word": "Headphones",
+				"attempts": 4,
+				"hint": "Device used to listen to audio privately"
+			}
 		]
 	}
 }

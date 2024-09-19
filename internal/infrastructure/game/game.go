@@ -19,6 +19,7 @@ type Game struct {
 	state        domain.GameState
 	category     string
 	difficulty   string
+	showHint     bool
 	gallowsLines []string
 	in           io.Reader
 	out          io.Writer
@@ -35,6 +36,7 @@ func New(eng Engine, category, difficulty string, in io.Reader, out io.Writer) (
 		state:        domain.NewGameState(guessedWord),
 		category:     category,
 		difficulty:   difficulty,
+		showHint:     false,
 		gallowsLines: strings.Split(gallows, "\n"),
 		in:           in,
 		out:          out,
@@ -50,9 +52,14 @@ func (g *Game) Start() {
 			break
 		}
 
-		input := []rune(scan.Text())
-		if len(input) == 1 {
-			g.engine.CheckLetter(&g.state, input[0])
+		input := strings.TrimSpace(scan.Text())
+		if input == "hint" {
+			g.showHint = true
+		} else {
+			inputRunes := []rune(input)
+			if len(input) == 1 {
+				g.engine.CheckLetter(&g.state, inputRunes[0])
+			}
 		}
 
 		g.draw()

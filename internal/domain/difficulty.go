@@ -11,11 +11,10 @@ func NewDifficultiesMap(difficulties map[string][]Word) DifficultiesMap {
 
 	for k, words := range difficulties {
 		newKey := strings.ToLower(k)
+
 		for _, word := range words {
-			mp[newKey] = append(mp[newKey], Word{
-				Value:    strings.ToLower(word.Value),
-				Attempts: word.Attempts,
-			})
+			word.Value = strings.ToLower(word.Value)
+			mp[newKey] = append(mp[newKey], word)
 		}
 	}
 

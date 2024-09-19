@@ -59,39 +59,45 @@ func TestNewEngineError(t *testing.T) {
 const words = `{
 	"Animals": {
 		"easy": [
-			{ "word": "Dog", "attempts": 6 },
-			{ "word": "Cat", "attempts": 6 }
+			{ "word": "Dog", "attempts": 6, "hint": "A loyal pet that barks" },
+			{ "word": "Cat", "attempts": 6, "hint": "A small pet that purrs" }
 		],
 		"medium": [
-			{ "word": "Bear", "attempts": 5 }
+			{ "word": "Bear", "attempts": 5, "hint": "Large animal that hibernates" }
 		],
 		"hard": [
-			{ "word": "Dolphin", "attempts": 4 }
+			{ "word": "Dolphin", "attempts": 4, "hint": "Intelligent marine mammal" }
 		]
 	},
 	"Fruits": {
 		"easy": [
-			{ "word": "Apple", "attempts": 6 }
+			{
+				"word": "Apple",
+				"attempts": 6,
+				"hint": "A popular fruit that keeps the doctor away"
+			}
 		],
 		"medium": [
-			{ "word": "Orange", "attempts": 5 }
+			{
+				"word": "Orange",
+				"attempts": 5,
+				"hint": "Citrus fruit with vitamin C"
+			}
 		],
 		"hard": [
-			{ "word": "Pineapple", "attempts": 4 }
+			{ "word": "Pineapple", "attempts": 4, "hint": "Spiky tropical fruit" }
 		]
 	},
 	"Colors": {
 		"easy": [
-			{ "word": "Red", "attempts": 5 },
-			{ "word": "Blue", "attempts": 6 }
+			{ "word": "Red", "attempts": 5, "hint": "Color of an apple" },
+			{ "word": "Blue", "attempts": 6, "hint": "Color of the sky" }
 		],
-		"hard": [
-			{ "word": "Purple", "attempts": 3 }
-		]
+		"hard": [{ "word": "Purple", "attempts": 3, "hint": "Mix of blue and red" }]
 	},
 	"Emotions": {
 		"easy": [
-			{ "word": "Happy", "attempts": 6 }
+			{ "word": "Happy", "attempts": 6, "hint": "Feeling of joy" }
 		]
 	}
 }
@@ -113,29 +119,29 @@ func TestGetRandomWordWithoutError(t *testing.T) {
 			category:   "animals",
 			difficulty: "easy",
 			suitableWords: map[domain.Word]struct{}{
-				{Value: "dog", Attempts: 6}: {},
-				{Value: "cat", Attempts: 6}: {},
+				{Value: "dog", Attempts: 6, Hint: "A loyal pet that barks"}: {},
+				{Value: "cat", Attempts: 6, Hint: "A small pet that purrs"}: {},
 			},
 		},
 		{
 			category:   "fruits",
 			difficulty: "medium",
 			suitableWords: map[domain.Word]struct{}{
-				{Value: "orange", Attempts: 5}: {},
+				{Value: "orange", Attempts: 5, Hint: "Citrus fruit with vitamin C"}: {},
 			},
 		},
 		{
 			category:   "colors",
 			difficulty: "hard",
 			suitableWords: map[domain.Word]struct{}{
-				{Value: "purple", Attempts: 3}: {},
+				{Value: "purple", Attempts: 3, Hint: "Mix of blue and red"}: {},
 			},
 		},
 		{
 			category:   "emotions",
 			difficulty: "easy",
 			suitableWords: map[domain.Word]struct{}{
-				{Value: "happy", Attempts: 6}: {},
+				{Value: "happy", Attempts: 6, Hint: "Feeling of joy"}: {},
 			},
 		},
 	}

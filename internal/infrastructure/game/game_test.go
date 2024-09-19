@@ -13,12 +13,12 @@ import (
 const words = `{
 	"Animals": {
 		"easy": [
-			{ "word": "Dog", "attempts": 6 }
+			{ "word": "Dog", "attempts": 6, "hint": "A loyal pet that barks" }
 		]
 	},
 	"Colors": {
 		"hard": [
-			{ "word": "Purple", "attempts": 3 }
+			{ "word": "Purple", "attempts": 3, "hint": "Mix of blue and red" }
 		]
 	}
 }
@@ -40,6 +40,7 @@ const (
 a
 o
 r
+hint
 g`
 
 	expectedOutputForWin = `
@@ -118,7 +119,22 @@ Attempts left: 4
  ╔╦╩╦╗  
 ██████████████████
 Category: animals, difficulty: easy
+Word: do-
+Hint: A loyal pet that barks
+Attempts left: 4
+
+══════════════════
+
+
+
+
+   ║    
+   ║    
+ ╔╦╩╦╗  
+██████████████████
+Category: animals, difficulty: easy
 Word: dog
+Hint: A loyal pet that barks
 Attempts left: 4
 Congratulation! You guessed the word
 `
@@ -143,6 +159,7 @@ func TestGameWithWin(t *testing.T) {
 const (
 	inputForLoss = `d
 a
+hint
 p
 q`
 
@@ -196,7 +213,22 @@ Attempts left: 1
  ╔╦╩╦╗  
 ██████████████████
 Category: colors, difficulty: hard
+Word: ------
+Hint: Mix of blue and red
+Attempts left: 1
+
+══════════════════
+
+   ╔═════════╗ 
+   ║    
+   ║    
+   ║    
+   ║    
+ ╔╦╩╦╗  
+██████████████████
+Category: colors, difficulty: hard
 Word: p--p--
+Hint: Mix of blue and red
 Attempts left: 1
 
 ══════════════════
@@ -210,6 +242,7 @@ Attempts left: 1
 ██████████████████
 Category: colors, difficulty: hard
 Word: p--p--
+Hint: Mix of blue and red
 Attempts left: 0
 You lose. Hidden word: purple
 `
