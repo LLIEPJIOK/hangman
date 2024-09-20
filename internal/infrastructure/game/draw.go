@@ -64,6 +64,6 @@ func (g *Game) draw() {
 	}
 
 	if g.state.AttemptsLeft == 0 {
-		fmt.Fprintf(g.out, "You lose. Hidden word: %s. Try again!", g.state.GuessedWord.Value)
+		fmt.Fprintf(g.out, "You lose. Hidden word: %s. Try again!\n", g.state.GuessedWord.Value)
 	}
 }

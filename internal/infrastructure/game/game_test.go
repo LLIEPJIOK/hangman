@@ -43,7 +43,18 @@ r
 hint
 g`
 
-	expectedOutputForWin = `
+	expectedOutputForWin = `Welcome to the game "Hangman"!
+
+Here you can test your word knowledge and intuition. Your task is to guess the word letter by letter. 
+For each incorrect guess, you'll get closer to failure, so be careful!
+
+You can use the following flags for configuration:
+  -c, --category string     words category (default "animals")
+  -d, --difficulty string   game difficulty (default "medium")
+  -p, --path string         path to file with words (default "resources/words.json")
+
+Good luck and have fun!
+
 ══════════════════
 
 
@@ -136,7 +147,7 @@ Category: animals, difficulty: easy
 Word: dog
 Hint: A loyal pet that barks
 Attempts left: 4
-Congratulation! You guessed the word
+Congratulations! You guessed the word! You can play again with different parameters
 `
 )
 
@@ -163,7 +174,18 @@ hint
 p
 q`
 
-	expectedOutputForLoss = `
+	expectedOutputForLoss = `Welcome to the game "Hangman"!
+
+Here you can test your word knowledge and intuition. Your task is to guess the word letter by letter. 
+For each incorrect guess, you'll get closer to failure, so be careful!
+
+You can use the following flags for configuration:
+  -c, --category string     words category (default "animals")
+  -d, --difficulty string   game difficulty (default "medium")
+  -p, --path string         path to file with words (default "resources/words.json")
+
+Good luck and have fun!
+
 ══════════════════
 
 
@@ -244,7 +266,7 @@ Category: colors, difficulty: hard
 Word: p--p--
 Hint: Mix of blue and red
 Attempts left: 0
-You lose. Hidden word: purple
+You lose. Hidden word: purple. Try again!
 `
 )
 
