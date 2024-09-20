@@ -4,6 +4,23 @@ import (
 	"fmt"
 )
 
+const greeting = `Welcome to the game "Hangman"!
+
+Here you can test your word knowledge and intuition. Your task is to guess the word letter by letter. 
+For each incorrect guess, you'll get closer to failure, so be careful!
+
+You can use the following flags for configuration:
+  -c, --category string     words category (default "animals")
+  -d, --difficulty string   game difficulty (default "medium")
+  -p, --path string         path to file with words (default "resources/words.json")
+
+Good luck and have fun!
+`
+
+func (g *Game) drawGreeting() {
+	fmt.Fprint(g.out, greeting)
+}
+
 const (
 	gallows = `   ╔═════════╗ 
    ║         ║  
@@ -43,10 +60,10 @@ func (g *Game) draw() {
 	fmt.Fprintln(g.out, "Attempts left:", g.state.AttemptsLeft)
 
 	if g.state.IsWin {
-		fmt.Fprintln(g.out, "Congratulation! You guessed the word")
+		fmt.Fprintln(g.out, "Congratulations! You guessed the word! You can play again with different parameters")
 	}
 
 	if g.state.AttemptsLeft == 0 {
-		fmt.Fprintln(g.out, "You lose. Hidden word:", g.state.GuessedWord.Value)
+		fmt.Fprintf(g.out, "You lose. Hidden word: %s. Try again!", g.state.GuessedWord.Value)
 	}
 }

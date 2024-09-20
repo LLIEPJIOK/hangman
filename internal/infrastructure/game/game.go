@@ -44,6 +44,7 @@ func New(eng Engine, category, difficulty string, in io.Reader, out io.Writer) (
 }
 
 func (g *Game) Start() {
+	g.drawGreeting()
 	g.draw()
 
 	scan := bufio.NewScanner(g.in)
