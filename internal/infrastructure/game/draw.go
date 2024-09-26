@@ -14,6 +14,8 @@ You can use the following flags for configuration:
   -d, --difficulty string   game difficulty (default "medium")
   -p, --path string         path to file with words (default "resources/words.json")
 
+You can type "hint" any time you want to get a hint
+
 Good luck and have fun!
 `
 

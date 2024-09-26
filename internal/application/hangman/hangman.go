@@ -1,23 +1,26 @@
 package hangman
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"strings"
 
 	"github.com/es-debug/backend-academy-2024-go-template/internal/infrastructure/engine"
 	"github.com/es-debug/backend-academy-2024-go-template/internal/infrastructure/game"
-	"github.com/spf13/pflag"
 )
 
 func Run() error {
 	var wordsPath, category, difficulty string
 
-	pflag.StringVarP(&wordsPath, "path", "p", "resources/words.json", "path to file with words")
-	pflag.StringVarP(&category, "category", "c", "animals", "words category")
-	pflag.StringVarP(&difficulty, "difficulty", "d", "medium", "game difficulty")
+	flag.StringVar(&wordsPath, "path", "resources/words.json", "path to file with words")
+	flag.StringVar(&wordsPath, "p", "resources/words.json", "path to file with words (shorthand)")
+	flag.StringVar(&category, "category", "animals", "words category")
+	flag.StringVar(&category, "c", "animals", "words category (shorthand)")
+	flag.StringVar(&difficulty, "difficulty", "medium", "game difficulty")
+	flag.StringVar(&difficulty, "d", "medium", "game difficulty (shorthand)")
 
-	pflag.Parse()
+	flag.Parse()
 
 	category = strings.ToLower(category)
 	difficulty = strings.ToLower(difficulty)
