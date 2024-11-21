@@ -1,16 +1,39 @@
-# Шаблон Go-проекта для домашних заданий
+# Hangman
 
-Шаблон для домашних заданий [Академии Бэкенда 2024](https://edu.tinkoff.ru/all-activities/courses/870efa9d-7067-4713-97ae-7db256b73eab).
+## Project Description
 
-Цель данного репозитория – познакомить вас с процессом разработки приложений на Go с использованием наиболее распространенных практик, инструментов и библиотек.
+**Hangman** is a text-based console game where the player tries to guess a hidden word by entering letters one at a time. The game allows the player to choose a category and difficulty level; afterward, the word is randomly chosen from a predefined list. If the player struggles, a hint is available for complex words. Incorrect guesses gradually draw parts of the hangman, and the game ends either when the word is fully guessed or when the hangman drawing is complete. The game is case-insensitive.
 
-## Структура проекта
+---
 
-Это шаблон проекта, основанный на лучших практиках структурирования Go кода приложения. Проект содержит в себе следующие компоненты:
+## Installation and Running
 
-- `cmd` – директория, содержащая исполняемые файлы приложения. В данном шаблоне есть только один исполняемый файл `run`, который запускает приложение. Хорошей практикой является название пакета, содержащего `main.go` так же, как и название исполняемого файла. Таким образом в каждом домашнем задании вам будет необходимо изменять название пакета `run` на название, подходящее для вашего приложения.
-- `internal` – директория, содержащая внутренние пакеты приложения. Внутренние пакеты не могут быть импортированы другими пакетами вне проекта.
-  - `application` - пакет, в котором содержатся юзкейсы приложения.
-  - `domain` - пакет, в котором содержатся модели приложения.
-  - `infrastructure` - пакет, в котором содержатся инфраструктурные компоненты приложения(работа с выводом пользователю, работа с диском, работа с сетью и т.д.).
-- `pkg` – директория, содержащая пакеты, которые могут быть импортированы другими пакетами вне проекта. Общей рекомендацией является то, что пакеты, содержащиеся в `pkg` должны быть независимыми от остальных пакетов проекта.
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:LLIEPJIOK/hangman.git
+   ```
+2. Navigate to the repository folder:
+   ```bash
+   cd hangman
+   ```
+3. Run the program:
+   ```bash
+   go run cmd/hangman/main.go -p resources/words.json -c animals -d medium
+   ```
+
+---
+
+## Testing
+
+1. **Word Selection**:  
+   Test that words are randomly selected based on the specified category and difficulty.
+
+2. **Game State Updates**:  
+   Verify that the game state (word and hangman figure) updates correctly after each input.
+
+3. **Input Validation**:  
+   Ensure the program correctly handles inputs of varying cases and invalid entries.
+
+4. **End Conditions**:
+   - Victory when the word is fully guessed.
+   - Defeat when the hangman is fully drawn after exceeding the allowed attempts.
