@@ -6,7 +6,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/es-debug/backend-academy-2024-go-template/internal/domain"
+	"github.com/LLIEPJIOK/hangman/internal/domain"
 )
 
 type Engine interface {

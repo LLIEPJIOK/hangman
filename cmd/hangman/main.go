@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/es-debug/backend-academy-2024-go-template/internal/application/hangman"
+	"github.com/LLIEPJIOK/hangman/internal/application/hangman"
 )
 
 func main() {

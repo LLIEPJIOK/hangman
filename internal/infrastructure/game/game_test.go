@@ -5,8 +5,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/es-debug/backend-academy-2024-go-template/internal/infrastructure/engine"
-	"github.com/es-debug/backend-academy-2024-go-template/internal/infrastructure/game"
+	"github.com/LLIEPJIOK/hangman/internal/infrastructure/engine"
+	"github.com/LLIEPJIOK/hangman/internal/infrastructure/game"
 	"github.com/stretchr/testify/require"
 )
 
